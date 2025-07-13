@@ -1,29 +1,44 @@
--- configs
+" configs
+set nocompatible
 set encoding = 'utf-8'          
-set tabstop = 2                 
-set shiftwidth = 2
-set softtabstop = 2
+set tabstop = 4
+set shiftwidth = 4
+set softtabstop = 4
+set expandtab
+set nowrap
+
+set wildmenu
+set wildmode=list:longest 
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 set undofile             
-set undolevels = 10000
+set undolevels=10000
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+set showmatch
+set path+=**
 
-set number                
+set number
 set relativenumber        
 set linebreak        
-set expandtab             
 set breakindent             
 set cursorline             
-set scrolloff=8
-set smarttab             
-set conceallevel=1
-set smarttab             
-set ruler             
-set wrap 
-set makeprg=rustc\ build.rs\ &&\ ./build
+set scrolloff=11
+set smarttab      
 
 set colorscheme=retrobox
 set syntax=on
 set clipboard=unnamedplus
+
+filetype on
+
+inoremap <C-k> >
+inoremap <C-j> <
+
+nnoremap <C-l> <CR>
+nnoremap <C-h> -
 
 "nnoremap '<leader>w', ':w<CR>', { noremap = true, silent = true })  -- Save file
 "nnoremap '<leader>q', ':q<CR>', { noremap = true, silent = true })  -- Quit Neovim
