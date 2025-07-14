@@ -1,9 +1,9 @@
 " configs
 set nocompatible
-set encoding = 'utf-8'          
-set tabstop = 4
-set shiftwidth = 4
-set softtabstop = 4
+set encoding=utf-8
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set nowrap
 
@@ -28,7 +28,8 @@ set cursorline
 set scrolloff=11
 set smarttab      
 
-set colorscheme=retrobox
+set background=dark
+colorscheme retrobox
 set syntax=on
 set clipboard=unnamedplus
 
@@ -37,8 +38,7 @@ filetype on
 inoremap <C-k> >
 inoremap <C-j> <
 
-nnoremap <C-l> <CR>
-nnoremap <C-h> -
+nnoremap <SPACE>e :Ex<cr>
 
 "nnoremap '<leader>w', ':w<CR>', { noremap = true, silent = true })  -- Save file
 "nnoremap '<leader>q', ':q<CR>', { noremap = true, silent = true })  -- Quit Neovim
