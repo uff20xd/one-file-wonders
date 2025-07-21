@@ -19,14 +19,12 @@ vim.opt.conceallevel = 1
 vim.opt.smarttab = true            
 vim.opt.ruler = true            
 vim.opt.wrap = true
-vim.opt.makeprg = "rustc build.rs && ./build"
+vim.opt.path:append("**")
+vim.opt.wildmode = "full"
+vim.opt.wildmenu = true
 vim.cmd("colorscheme retrobox"); vim.cmd("syntax on") vim.cmd("set clipboard=\"unnamedplus\"")
 -- Keymaps
 vim.g.mapleader = " "
-
---all mode keybinds
-vim.keymap.set( "n",'<C-l>', '<CR>', { noremap = false, silent = true })  -- Enter press for netrw
-vim.keymap.set( "n", '<C-h>', '-', { noremap = false, silent = true })  -- Minus press for netrw
 
 --normal mode keybinds
 vim.keymap.set('n', '<leader>w', ':w<CR>', { noremap = true, silent = true })  -- Save file
@@ -51,6 +49,7 @@ vim.keymap.set("i", "<C-k>", ">", { noremap = true, silent = true })
 --terminal mode keybinds
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 --NETRW
+--
 function ToggleNetRW()
   if vim.bo.filetype == 'netrw' then
     vim.api.nvim_command('Rex')
@@ -93,7 +92,7 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.keymap.set('n', 'h', '-', { remap = true, silent = true, buffer = true })
     vim.keymap.set('n', 'l', '<CR>', { remap = true, silent = true, buffer = true })
     vim.keymap.set('n', 'r', 'R', { remap = true, silent = true, buffer = true })
-    vim.keymap.set('n', 'c', ':cd %<CR>', { remap = true, silent = true, buffer = true })
+    vim.keymap.set('n', 'cd', ':cd %<CR>', { remap = true, silent = true, buffer = true })
     local unbinds = {
       'a', '<F1>', '<del>', '<c-h>', '<c-r>', '<c-tab>', 'C', 'gb', 'gd', 'gf', 'gn', 'gp', 'i', 'I', 'mb', 'md',
       'me', 'mg', 'mh', 'mr', 'mt', 'mT', 'mu', 'mv', 'mX', 'mz', 'o', 'O', 'p', 'P', 'qb', 'qf', 'qF',
